@@ -1,0 +1,22 @@
+Options -MultiViews
+
+RewriteEngine On
+
+RewriteRule platform/generate controllers/module.platform.php?action=GENERATE_PLATFORM_INFO [QSA]
+
+RewriteRule tech/add/new controllers/module.platform.php?action=TECH_ADD_NEW [QSA]
+RewriteRule tech/update/new controllers/module.platform.php?action=TECH_UPDATE_NEW [QSA]
+RewriteRule tech/delete controllers/module.platform.php?action=TECH_DELETE [QSA]
+
+RewriteRule subject/add/new controllers/module.platform.php?action=SUBJECT_ADD_NEW [QSA]
+RewriteRule subject/update/new controllers/module.platform.php?action=SUBJECT_UPDATE_NEW [QSA]
+
+RewriteRule syllabus/add/new controllers/module.platform.php?action=SYLLABUS_ADD_NEW [QSA]
+RewriteRule syllabus/update/new controllers/module.platform.php?action=SYLLABUS_UPDATE_NEW [QSA]
+
+
+#RewriteRule platform/view controllers/module.admin.php?action=PLATFORM_VIEW [NC,L]
+#RewriteRule question/add/new controllers/module.admin.php?action=QUESTION_ADD_NEW [QSA]
+#RewriteRule question/view/([^/]+)/([^/]+)/([^/]+)$ controllers/module.admin.php?action=QUESTION_VIEW&platformName=$1&limitStart=$2&limitEnd=$3 [QSA]
+#RewriteRule question/update controllers/module.admin.php?action=QUESTION_UPDATE [QSA]
+#RewriteRule question/autocomplete controllers/module.admin.php?action=QUESTION_AUTOCOMPLETE [QSA]

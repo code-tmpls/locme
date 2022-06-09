@@ -1,0 +1,6 @@
+https://www.baeldung.com/java-string-interview-questions
+https://soshace.com/top-20-java-string-interview-questions-and-answers/
+https://www.javatpoint.com/java-string-faqs
+
+
+Javascript: https://github.com/sudheerj/javascript-interview-questions#how-do-you-get-enumerable-key-and-value-pairs

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<style>
+a { color: #024279; }
+pre { background: none;border: 0px; }
+body { font-size: 12px;padding: 15px; }
+.hide-block { display: none; }
+.output-bg { background-color: #fefefe; }
+.mbot5p { margin-bottom: 5px; }
+img { width: 300px;height: 100%;padding: 5px; }
+.pad5p { padding: 5px; }
+.mbot15p { margin-bottom: 15px; }
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover {
+background-color: #d0254e; }
+.dropdown-menu>li>a { padding: 5px 20px; }
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-8 mbot15p">
+<!--/. Work Here :: START -->
+
+<div class="appQuestion"><b>1. What Is Amazon Ec2 Service ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+Amazon Elastic Compute Cloud (Amazon EC2) is a Amazon web service that provides resizable (scalable) computing capacity in the cloud. You can use Amazon EC2 to launch as many virtual servers you need. In Amazon EC2 you can configure security and networking as well as manage storage.Amazon EC2 service also helps in obtaining and configuring capacity using minimal friction.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+<div class="appQuestion"><b>2. What Are The Features Of The Amazon Ec2 Service ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+
+As the Amazon EC2 service is a cloud service so it has all the cloud features.
+
+<strong>Amazon EC2 provides the following features:</strong>
+
+<li>Virtual computing environment (known as instances)</li>
+<li>Pre-configured templates for your instances (known as Amazon Machine Images – AMIs)</li>
+<li>Amazon Machine Images (AMIs) is a complete package that you need for your server (including the operating system and additional software)</li>
+<li>Amazon EC2 provides various configurations of CPU, memory, storage and networking capacity for your instances (known as instance type)</li>
+<li>Secure login information for your instances using key pairs (AWS stores the public key and you can store the private key in a secure place)</li>
+<li>Storage volumes of temporary data is deleted when you stop or terminate your instance (known as instance store volumes)</li>
+<li>Amazon EC2 provides persistent storage volumes (using Amazon Elastic Block Store – EBS)</li>
+<li>A firewall that enables you to specify the protocols, ports, and source IP ranges that can reach your instances using security groups</li>
+<li>Static IP addresses for dynamic cloud computing (known as Elastic IP address)</li>
+<li>Amazon EC2 provides metadata (known as tags)</li>
+<li>Amazon EC2 provides virtual networks that are logically isolated from the rest of the AWS cloud, and that you can optionally (Salesforce Certification Training) connect to your own network (known as virtual private clouds – VPCs)</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>3. What Are The Security Best Practices For Amazon Ec2 ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+
+<strong>For secure Amazon EC2 best practices, follow the following steps:</strong>
+
+<li>Use AWS identity and access management to control access to your AWS resources</li>
+<li>Restrict access by allowing only trusted hosts or networks to access ports on your instance</li>
+<li>Review the rules in your security groups regularly</li>
+<li>Only open up permissions that your require</li>
+<li>Disable password-based login, for instance, launched from your AMI Complete Amazon Web Services Tutorials</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+
+<div class="appQuestion"><b>4. Explain Storage For Amazon Ec2 Instance ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+Amazon EC2 provides many data storage options for your instances. Each option has a unique combination of performance and durability. These storages can be used independently or in combination to suit your requirements.
+There are mainly four types of storages provided by AWS:
+
+<li><strong>Amazon EBS:</strong> Its durable, block-level storage volumes can attached in running Amazon EC2 instance. The Amazon EBS volume persists independently from the running life of an Amazon EC2 instance. After an EBS volume is attached to an instance, you can use it like any other physical hard drive. Amazon EBS encryption feature supports encryption feature.</li>
+<li><strong>Amazon EC2 Instance Store:</strong> Storage disk that is attached to the host computer is referred to as instance store. The instance storage provides temporary block-level storage for Amazon EC2 instances. The data on an instance store volume persists only (sap training) during the life of the associated Amazon EC2 instance; if you stop or terminate an instance, any data on instance store volumes is lost.</li>
+<li><strong>Amazon S3:</strong> Amazon S3 provides access to reliable and inexpensive data storage infrastructure. It is designed to make web-scale computing easier by enabling you to store and retrieve any amount of data, at any time, from within Amazon EC2 or anywhere on the web.</li>
+<li><strong>Adding Storage:</strong> Every time you launch an instance from an AMI, a root storage device is created for that instance. The root storage device contains all the information necessary to boot the instance. You can specify storage volumes in addition to the root device volume when you create an AMI or launch an instance using block device mapping.</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+
+<div class="appQuestion"><b>5.  Explain Stopping, Starting, And Terminating An Amazon Ec2 Instance ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+Stopping and Starting an instance: When an instance is stopped, the instance performs a normal shutdown and then transitions to a stopped state. All of its Amazon EBS volumes remain attached, and you can start the instance again at a later time. You are not charged for additional instance hours while the instance is in a stopped state.
+
+Terminating an instance: When an instance is terminated, the instance performs a normal shutdown, then the attached Amazon EBS volumes are deleted unless the volume’s deleteOnTermination attribute is set to false. The instance itself is also deleted, and you can’t start the instance again at a later time.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+
+<div class="appQuestion"><b>6.  What Are The Basic Structures Of The Amazon Ec2 Service ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+
+As the Amazon EC2 service is a cloud facility so it has entirely all the cloud features. Amazon EC2 delivers the subsequent features:
+
+<li>Virtual computing atmosphere (popular as instances)</li>
+<li>Pre-configured patterns for your illustrations (popular as Amazon Machine Images – AMIs)</li>
+<li>Amazon Machine Images known as AMIs is a comprehensive set that you require for your server (counting the operating system and extra software)</li>
+<li>Amazon EC2 delivers numerous arrangements of Storage, CPU, memory, and networking measurements for your occurrences (popular as instance type)</li>
+<li>Locked login data for your cases by means of key pair (AWS supplies the public vital and you can supply the inaccessible key in a safe place)</li>
+<li>Storage capacities of provisional data is erased when you stop or dismiss your occurrence (popular as occurrence store volumes)</li>
+<li>Amazon EC2 delivers tenacious storage volumes (by means of Amazon Elastic Block Store – EBS)</li>
+<li>A firewall that permits you to stipulate the procedures, docks, and source IP ranges that can spread your occurrences using security groups</li>
+<li>Stationary IP addresses for lively cloud computing (popular as Elastic IP address)</li>
+<li>Amazon EC2 delivers metadata (popular as tags)</li>
+<li>Amazon EC2 offers virtual systems that are reasonably secluded from the rest of the AWS cloud, and that you can optionally attach to your own system (recognized as virtual private clouds – VPCs)</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+
+<div class="appQuestion"><b>7. Describe Storage For Amazon Ec2 Occurrence ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+
+Amazon EC2 offers numerous data storage choices for your occurrences. Each choice has an exclusive mixture of presentation and sturdiness. These storages can be used self-sufficiently or in grouping to suit your necessities.
+
+There are chiefly four types of storages offered by AWS:</strong>
+
+<li><strong>Amazon EBS:</strong> Its sturdy, block-level storage capacities can involve in running Amazon EC2 occurrence. The Amazon EBS volume continues self-sufficiently from the running lifespan of an Amazon EC2 occurrence. After an EBS volume is involved to an example, you can use it like any other bodily hard drive. Amazon EBS encryption feature provisions encryption feature.</li>
+<li><strong>Amazon EC2 Instance Store:</strong> Storage disk that is involved to the host computer is mentioned to as occurrence store. The instance storage offers provisional block-level storing for Amazon EC2 instances. The data on an illustration store volume perseveres only during the life of the related Amazon EC2 instance; if you halt or dismiss an instance, any data on occurrence store volumes is misplaced.</li>
+<li><strong>Amazon S3:</strong> Amazon S3 delivers access to dependable and budget data storage organization. It is intended to make web-scale calculating simpler by permitting you to store and save any amount of data, at any period, from within Amazon EC2 or anyplace on the web.</li>
+<li><strong>Addition Storage:</strong> Every time your presentation an occurrence from an AMI, a root storage device is twisted for that occurrence. The root storage device comprises all the information essential to boot the occurrence. You can stipulate storage volumes in calculation to the root device volume when you generate an AMI or present an instance using hunk device mapping.</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>8. Can S3 Be Cast-off With Ec2 Instances, In Case Of “yes” Please Specify How ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+
+Yes, it can be cast-off for instances with root approaches backed by native occurrence storage. By using Amazon S3, developers have access to the similar extremely scalable, dependable, fast, low-priced data storage substructure that Amazon uses to track its own worldwide network of web sites. In order to perform systems in the Amazon EC2 atmosphere, developers use the tools providing to load their Amazon Machine Images (AMIs) into Amazon S3 and to transfer them between Amazon S3 and Amazon EC2. Additional use case might be for websites hosted on EC2 to load their stationary content from S3
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+
+<div class="appQuestion"><b>9. What Are Regions And Availability Zones In Amazon Ec2 ? Explain In Brief ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+
+Amazon EC2 is hosted in multiple locations world-wide. These locations are composed of regions and Availability Zones. Each region is a separate geographic area. Each region has multiple, isolated locations known as Availability Zones.
+
+Each region is completely independent. Each Availability Zone is isolated, but the Availability Zones in a region are connected through low-latency links. The following diagram illustrates the relationship between regions and Availability Zones.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>10. Explain How To Launch Ec2 Instance In An Availability Zone ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+
+Each region is completely independent and each Availability Zone is isolated. When you view your resources, you’ll only see the resources tied to the region you have specified.
+
+To launch a EC2 instance, you must select an AMI that’s in the same region (if the AMI is in another region then you can copy the AMI to the region you are using). Now select an Availability Zone or let AWS choose for you. After creating the EC2 instance, it will show up in selected Availability Zone.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>11. What Is Amazon Ec2 Root Device Volume ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+When you launch an instance, the Root Device Volume contains the image used to boot the instance.
+
+<strong>You can launch an instance from one of two types of AMIs:</strong>
+
+<li>Instance store-backed AMI</li>
+<li>EBS based storage</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+
+<div class="appQuestion"><b>12.  How To Persist Root Device Volume In Amazon Ec2 Instance ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+
+By default, the root device volume for an AMI backed by Amazon EBS is deleted when the instance terminates. To change the default behavior, set the DeleteOnTermination attribute to false using a block device mapping.
+
+<li>To change the root device volume of an instance to persist at launch using the console</li>
+<li>Open the Amazon EC2 console.</li>
+<li>From the Amazon EC2 console dashboard, click Launch Instance.</li>
+<li>On the Choose an Amazon Machine Image (AMI) page, choose the AMI to use and click Select.</li>
+<li>Follow the wizard to complete the Choose an Instance Type and Configure Instance Details pages.</li>
+<li>On the Add Storage page, deselect the Delete On Termination check box for the root volume.</li>
+<li>Complete the remaining wizard pages, and then click Launch.</li>
+<li>Changing the Root Volume of an Instance to Persist Using the AWS CLI</li>
+<li>Use the run-instances command to preserve the root volume by including a block device mapping that sets its DeleteOnTermination attribute for to false.</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>13. What Is Security Group In Amazon Ec2 ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+Security groups act as a firewall for associated instances, controlling both inbound and outbound traffic at the instance level.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+
+<div class="appQuestion"><b>14. What Are The Features Of Security Group In Amazon Ec2 ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+<strong>Following are the features of the Security Group in Amazon EC2:</strong>
+
+<li>We can add rules to a security group that enable us to connect to our instance from our IP address using SSH.</li>
+<li>We can also add rules that allow inbound and outbound HTTP and HTTPS access from anywhere.</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>15. How To Create Security Group In Amazon Ec2 ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+We can create Security Group in Amazon EC2 using the Amazon EC2 console. To launch instances in multiple regions, we’ll need to create a Security Group in each region.
+
+<strong>Following are the steps to create Security Group in Amazon EC2:</strong>
+
+<li>Open the Amazon EC2 console.</li>
+<li>From the left navigation bar, select a region for the security group.</li>
+<li>Click Security Groups in the navigation pane.</li>
+<li>Click Create Security Group.</li>
+<li>Enter a name for the new security group and a description.</li>
+<li>In the VPC list, select your VPC.</li>
+<li>On the Inbound tab, click Add Rule for each new rule, and then click Create.</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>16.  How To Launch An Amazon Ec2 Instance ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+
+We can launch Linux/Windows Amazon EC2 instance using AWS Management Console.
+
+<strong>Following are the steps to create Amazon EC2 instance:</strong>
+
+<li>Open the Amazon EC2 console.</li>
+<li>From the console dashboard, choose Launch Instance.</li>
+<li>Choose an Amazon Machine Image (AMI).</li>
+<li>Choose an Instance Type.</li>
+<li>Click on Review and Launch to let the wizard complete the other configuration setting.</li>
+<li>On the Review Instance Launch page, under Security Groups select a Security Group.</li>
+<li>Click on Launch on the Review Instance Launch.</li>
+<li>Select an Existing ket pair when it prompte for key pair.</li>
+<li>Click on View Instance to return on the console to see instance is launching.</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>17. How To Connect To Your Amazon Ec2 Instance ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+There are several ways to connect to a Linux instance. One of the commonly used method is to connect Linux instance from Windows local machine using PuTTY.
+
+<strong>Following are the steps to connect to a Linux instance:</strong>
+
+<li>Install PuTTY on your local machine.</li>
+<li>Get your instance ID.</li>
+<li>Get the public DNS name of the instance.</li>
+<li>Locate the private key.</li>
+<li>Enable inbound SSH traffic from your IP address to your instance.</li>
+<li>Converting Your Private Key Using PuTTYgen.</li>
+<li>Starting a PuTTY Session.</li>
+<li>Now you are connected to your EC2 instance.</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>18.  How To Add A Ebs Volume To Your Amazon Ec2 Instance ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+We can attach an EBS volume to one of our instances that is in the same Availability Zone as the Volume.
+
+<strong>Following are the steps to attache an EBS volumn to an instance using console:</strong>
+
+<li>Open the Amazon EC2 console.</li>
+<li>In the left navigation pane, choose Volumes.</li>
+<li>Select a volume and choose Attach Volume.</li>
+<li>Select the instance to which you want to attach the volume.</li>
+<li>Click on Attach.</li>
+<li>Now connect to your instance and make the volume available.</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>19. How To Clean Up Your Amazon Ec2 Instance And Volume ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+After we are finished with the instance we created, we can clean up by terminating the instance.
+
+<strong>Following are the steps to terminate the EC2 instance:</strong>
+
+<li>In the navigation pane, choose Instances. In the list of instances, select the instance.</li>
+<li>Choose Actions, then Instance State, and then choose Terminate.</li>
+<li>Choose Yes,Terminate when prompted for confirmation.</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+<div class="appQuestion"><b>20. What Are The Best Practices For Amazon Ec2 ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+To get the maximum benefit from and satisfaction with Amazon EC2.
+
+<strong>There are mainly four best practices:</strong>
+
+<li>Security and Network Best Practices</li>
+<li>Storage</li>
+<li>Resource Management</li>
+<li>Backup and Recovery</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+<div class="appQuestion"><b>21. What Is Amazon Machine Image And What Is The Relation Between Instance And Ami ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+Amazon Web Services provides several ways to access Amazon EC2, like web-based interface, AWS Command Line Interface (CLI) and Amazon Tools for Windows Powershell. First, you need to sign up for an AWS account and you can access Amazon EC2.
+
+Amazon EC2 provides a Query API. These requests are HTTP or HTTPS requests that use the HTTP verbs GET or POST and a Query parameter named Action.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>22. What Is Amazon Machine Image (ami) ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+An Amazon Machine Image (AMI) is a template that contains a software configuration (for example, an operating system, an application server, and applications). From an AMI, we launch an instance, which is a copy of the AMI running as a virtual server in the cloud. We can even launch multiple instances of an AMI.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>23. What Is The Relation Between Instance And Ami ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+We can launch different types of instances from a single AMI. An instance type essentially determines the hardware of the (pivotal training) host computer used for your instance. Each instance type offers different compute and memory capabilities. 
+
+After we launch an instance, it looks like a traditional host, and we can interact with it as we would do with any computer. We have complete control of our instances; we can use sudo to run commands that require root privileges.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>24. How To Migrate An Instance To Another Availability Zone ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+You can migrate your EC2 instance from one Availability Zone to another.
+
+<strong>Following are the steps to migrate an Instance to another Availability Zone:</strong>
+
+<li>Create an AMI from the running instance</li>
+<li>Launch an instance from the AMI that you just created, specify the new Availability Zone</li>
+<li>You can use the same instance type as the original instance, or select a new instance type</li>
+<li>If the original instance has an associated Elastic IP address, then associate it with the new instance</li>
+<li>If the original instance is a Reserved Instance, change the Availability Zone for your reservation</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>25. What Is Key Pair ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+AWS uses public-key cryptography to secure the login information for your instance. A Linux instance has no password; you use a key pair to log in to your instance securely.
+
+You specify the name of the key pair when you launch your instance, then provide the private key when you log in using SSH.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>26. How To Create Key Pair ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+We can create one using the Amazon EC2 console. To launch instances in multiple regions, we’ll need to create a key pair in each region.
+
+<strong>Following are the steps to create Key Pair:</strong>
+
+<li>Sign in to Amaon Web Service.</li>
+<li>From the AWS dashboard, choose EC2 to open the Amazon EC2 console.</li>
+<li>From the navigation bar, select a region for the key pair.</li>
+<li>In the left navigation pane, under NETWORK & SECURITY, click Key Pairs.</li>
+<li>Click Create Key Pair.</li>
+<li>Enter a name for the new key pair in the Key pair name field of the Create Key Pair dialog box, and then click Create.</li>
+<li>The private key file is automatically downloaded by your browser. The base file name is the name you specified as the name of your key pair, and the file name extension is .pem.</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>27. What Is The Use Of Key Pair ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+Key pair is used to log in to your instance securely. This is public-key cryptography to secure the login information for your instance.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>28. How To Create Your Own Amazon Machine Image (ami) ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+You can customize a instance that is launched from a public AMI and then save that configuration as a custom AMI for your own use.
+
+Instances that you launch from your AMI use all the customizations that you’ve made.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+<div class="appQuestion"><b>29. How To Determine The Root Device Type Of Your Ami ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+We can determine the Root Device type of AMI using following 2 methods.
+
+<strong>Method 1</strong>: Following are the steps to determine the Root Device type of an AMI using the console
+
+<li>Open the Amazon EC2 console</li>
+<li>In the navigation pane, click AMIs, and select the AMI</li>
+<li>Check the value of Root Device Type in the Details tab as follows</li>
+<li>If the value is ebs, this is an Amazon EBS-backed AMI</li>
+<li>If the value is instance store, this is an instance store-backed AMI</li>
+<strong>Method 2</strong>: Following are the steps to determine the root device type of an AMI using the command line
+
+We can use one of the following commands.
+
+<li>describe-images (AWS CLI)</li>
+<li>Get-EC2Image (AWS Tools for Windows PowerShell)</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+<div class="appQuestion"><b>30. What Is The Size Limit For Amazon Ec2 Instance Store-backed Amis And Amazon Ebs-backed Amis ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+All AMIs are categorized as either backed by Amazon EBS or backed by instance store.
+
+<strong>Backed by Amazon EBS </strong>– means that the root device for an instance launched from the AMI is an Amazon EBS volume created from an Amazon EBS snapshot.
+
+<strong>Backed by instance store </strong>– means that the root device for an instance launched from the AMI is an instance store volume created from a template stored in Amazon S3.
+
+<strong>Root device size limit for –</strong>
+
+Amazon EBS – Backed is 16 TiB
+
+Amazon Instance Store-Backed is 10 GiB
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>31. How You’re Charged In Amazon Ec2? Explain In Detail ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+<li>Charges varies upon AMIs backed and storage volums.</li>
+<li>AMIs backed by instance storage charged for: AMI storage + Instance usage</li>
+<li>AMIs backed by Amazon EBS storage charged for: Volume storage + Usage in addition to the AMI + instance usage</li>
+<li>When an Amazon EBS-backed instance is stopped, you are not charged for instance usage, but you are still charged for volume storage.</li>
+<li>AWS charges a full instance hour for every transition from a stopped state to a running state, even if we transition the instance multiple times within a single hour.</li>
+<strong>For example:</strong> if hourly instance charge for your instance is $0.10 and if you were to run that instance for one hour without stopping it, you would be charged $0.10. If you stopped and restarted that instance twice during that hour, then you would be charged $0.30 for that hour of usage (the initial $0.10, plus 2 x $0.10 for each restart).
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>32. What Is Shared Ami ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+A shared AMI is an AMI that a developer created and made available for other developers to use.
+
+One of the easiest ways to get started with Amazon EC2 is to use a shared AMI that has the components you need and then add custom content. You can also create your own AMIs and share them with others.
+
+<li>Use a shared AMI at your own risk. Amazon can’t vouch for the integrity or security of AMIs shared by other Amazon EC2 users. AWS recommends that you get an AMI from a trusted source.</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>33. How To Update Ami Tools At Boot Time ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+
+AWS recommends that your AMIs download and upgrade the Amazon
+
+EC2 AMI creation tools during startup. This ensures that new AMIs based on your shared AMIs have the latest AMI tools.
+
+<strong>For Amazon Linux, add the following to /etc/rc.local:</strong>
+<pre><code class="language-html hljs xml"># Update the Amazon EC2 AMI tools
+
+echo ” + Updating EC2 AMI tools”
+
+yum update -y aws-amitools-ec2
+
+echo ” + Updated EC2 AMI tools”</code></pre>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+<div class="appQuestion"><b>34. How To Disable Password-based Logins For Root In Amazon Ec2 Instance ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+Using a fixed root password for a public AMI is a security risk that can quickly become known. Even relying on users to change the password after the first login opens a small window of opportunity for potential abuse.
+
+Following are the steps to disable password-based remote logins for the root user:
+
+<strong>Open the /etc/ssh/sshd_config file with a text editor and locate the following line:</strong>
+<pre><code class="language-html hljs xml">#PermitRootLogin yes</code></pre>
+<strong>Change the line to:</strong>
+PermitRootLogin without-password
+The location of this configuration file might differ for your distribution.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>35. What Is Public Key Credentials And How To Install It ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+Amazon EC2 uses public–key cryptography to encrypt and decrypt login information. Public–key cryptography uses a public key to encrypt a piece of data, such as a password, then the recipient uses the private key to decrypt the data. The public and private keys are known as a key pair.
+
+After configuring the AMI to prevent logging in using a password, you must make sure users can log in using another mechanism.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+<div class="appQuestion"><b>36. How Is Stopping And Terminating An Instance Different From Each Other ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+<strong>Starting, stopping and terminating are the three states in an EC2 instance, let’s discuss them in detail:</strong>
+
+<li>Stopping and Starting an instance: When an instance is stopped, the instance performs a normal shutdown and then transitions to a stopped state. All of its Amazon EBS volumes remain attached, and you can start the instance again at a later time. You are not charged for additional instance hours while the instance is in a stopped state.</li>
+<li>Terminating an instance: When an instance is terminated, the instance performs a normal shutdown, then the attached Amazon EBS volumes are deleted unless the volume’s deleteOnTermination attribute is set to false. The instance itself is also deleted, and you can’t start the instance again at a later time.</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+<div class="appQuestion"><b>37. How Is A Spot Instance Different From An On-demand Instance Or Reserved Instance ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+First of all, let’s understand that Spot Instance, On-Demand instance and Reserved Instances are all models for pricing. Moving along, spot instances provide the ability for customers to purchase compute capacity with no upfront commitment, at hourly rates usually lower than the On-Demand rate in each region. Spot instances are just like bidding, the bidding price is called Spot Price.
+
+The Spot Price fluctuates based on supply and demand for instances, but customers will never pay more than the maximum price they have specified. If the Spot Price moves higher than a customer’s maximum price, the customer’s EC2 instance will be shut down automatically.
+
+But the reverse is not true, if the Spot prices come down again, your EC2 instance will not be launched automatically, one has to do that manually. In Spot and On demand instance, there is no commitment for the duration from the user side, however in reserved instances one has to stick to the time period that he has chosen.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+<div class="appQuestion"><b>38. Is It Possible To Change The Private Ip Addresses Of An Ec2 While It Is Running/stopped In A Vpc ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+The primary private IP address cannot be changed. Secondary private addresses can be unassigned, assigned or moved between interfaces or instances at any point.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+<div class="appQuestion"><b>39. Can S3 Be Used With Ec2 Instances, If Yes, How ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+Yes, it can be used for instances with root devices backed by local instance storage. By using Amazon S3, developers have access to the same highly scalable, reliable, fast, inexpensive data storage infrastructure that Amazon uses to run its own global network of web sites. In order to execute systems in the Amazon EC2 environment, developers use the tools provided to load their Amazon Machine Images (AMIs) into Amazon S3 and to move them between Amazon S3 and Amazon EC2.
+
+Another use case could be for websites hosted on EC2 to load their static content from S3.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+<div class="appQuestion"><b>40. If You Want To Launch Amazon Elastic Compute Cloud (ec2) Instances And Assign Each Instance A Predetermined Private Ip Address You Should ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+The best way of connecting to your cloud resources (for ex- ec2 instances) from your own data center (for eg- private cloud) is a VPC. Once you connect your datacenter to the VPC in which your instances are present, each instance is assigned a private IP address which can be accessed from your datacenter. Hence, you can access your public cloud resources, as if they were on your own network.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+<div class="appQuestion"><b>41. Explain What Happens When I Reboot An Ec2 Instance ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+Rebooting an instance is like rebooting a PC. The hard disk isn’t affected. You don’t return to the image’s original state, but the contents of the hard disks are those before the reboot.
+
+Rebooting isn’t associated with billing. Billing starts when you instantiate an image and stops when you terminate it. Rebooting in between hasn’t any effect.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+<div class="appQuestion"><b>42. How You Will Change The Root Ebs Device Of My Amazon Ec2 Instance ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+<li>Stop the instance.</li>
+<li>Detach the root EBS volume.</li>
+<li>Attach the alternate EBS volume (as the root e.g. /dev/sda1)</li>
+<li>Start the instance.</li>
+<li>This presupposes that your alternate EBS volume is bootable, of course – it has to contain the bootable OS image.</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+<div class="appQuestion"><b>43. What Is The Underlying Hypervisor For Ec2 ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+Xen
+<!-- Answer ::: END -->
+</div>
+</div>
+
+<div class="appQuestion"><b>44. What Are Spot Instances In Amazon Ec2 ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+In Amazon EC2, we can even bid for getting a computing instance. Any instance procured by bidding is a Spot Instance. Multiple users bid for an EC2 Instance. Once the bid price exceeds the Spot price, the user with the highest bid gets it. As long as their bid price remains higher than the Spot price, they can keep using it.
+
+Spot price varies with the supply and demand. Once Spot price exceeds Bid price, the instance will be taken back from the user.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+<div class="appQuestion"><b>45. What Is The Difference Between A Spot Instance And A Demand Instance On Ec2 ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+“On-Demand” instances allow the user to use the compute by hour without requiring long term commitment. There are no guarantees that the user will always be able to launch specific instance types in an availability zone, though AWS tries it’s best to meet the needs. This service is preferable for POCs and they do not suffer an interruption of the service(by AWS) like Spot instances.
+
+“Spot” instances are a bid_for_low_price version of On-Demand instances, but could be shut down by AWS anytime the Spot instance price goes higher than bid price. Spot price fluctuates based on the supply and demand of the capacity. It’s essentially the leftover capacity of AWS to be used. There is no difference in the performance compared to On-Demand instances and is usually cheaper than On-demand instances as there is no guarantee provided over the availability. The user can choose a start time and end time for the instances or can make a persistent request(no end time specified) for this service. This service is preferable for computing needs which are not tied to any deadlines, computing needs are large and the interruption of service is acceptable.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+<div class="appQuestion"><b>46. What Are The Main Features Of Classic Load Balancer In Ec2 ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+<strong>Some of the main features of Classic Load Balancer (CLB) in Amazon EC2 are as follows:</strong>
+
+<strong>Health Check:</strong> Based on the result of Health Check, Classic Load Balancer can decide to route the traffic. If any instance has unhealthy results, CLB will not route the traffic to that instance.
+
+<strong>Security:</strong> We can create security groups for CLB in Virtual Private Cloud (VPC). With these features, it is easy to implement secure load balancing within a network.
+
+<strong>High Availability:</strong> With CLB, we can distribute traffic among EC2 instances in single or multiple Availability Zones. This helps in providing very high scale of availability for the incoming traffic.
+
+<strong>Sticky Sessions:</strong> CLB also supports sticky session by using cookies. The sticky sessions make sure that the traffic from a user is always routed to the same instance so that user gets seamless experience.
+
+<strong>IPv6:</strong> CLB also support Internet Protocol version 6.
+
+<strong>Operational Monitoring:</strong> We can also perform operational monitoring CLB and collect statistics on request count, latency etc. These metrics can be monitored in CloudWatch.
+<!-- Answer ::: END -->
+</div>
+</div>
+
+
+<div class="appQuestion"><b>47. What Are The Main Features Of Application Load Balancer (alb) In Amazon Ec2 ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+<strong>Main features of Application Load Balancer (ALB) are as follows:</strong>
+
+<li><strong>Content-Based Routing:</strong> In ALB, we can make use of content in the request to decide the routing of a request to a specific service.</li>
+<li><strong>HTTP/2:</strong> ALB supports the new version of HTTP protocol. In this protocol, we can send multiple requests on same connection. It also supports TLS and header compression.</li>
+<li><strong>WebSockets:</strong> ALB supports WebSockets in EC2. With WebSockets, a server can exchange real-time messages with the end-users.</li>
+<li><strong>Layer-7 Load Balancing:</strong> ALB can also load balance HTTP/HTTPS application with layer-7 specific features.</li>
+<li><strong>Delete Protection:</strong> ALB also provides Delete Protection option by which we can prevent it from getting deleted by mistake.</li>
+<li><strong>Containerized Application Support:</strong> We can use ALB to load balance multiple containers across multiple ports on same EC2 instance.</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+<div class="appQuestion"><b>48. What Is A Placement Group In Ec2 ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+AWS provides an option of creating a Placement Group in EC2 to logically group the instances within as single Availability Zone.
+
+We get the benefits of low network latency and high network throughput by using a Placement Group.
+
+Placement Group is a free option as of now. When we stop an instance, it will run in same Placement Group in restart at a later point of time.
+
+The biggest limitation of Placement Group is that we cannot add Instances from multiple availability zones to one Placement Group.
+<!-- Answer ::: END -->
+</div>
+</div>
+<div class="appQuestion"><b>49. What Types Of Issues Do You Face While Connecting To An Ec2 Instance ?</b></div>
+<div class="list-group">
+<div class="list-group-item appAnswer">
+<!-- Answer ::: START -->
+<strong>Some of the possible connection issues with EC2 instance are:</strong>
+
+<li>Connection time out</li>
+<li>Permission denied due to host key not found</li>
+<li>Unprotected private key file</li>
+<li>Permission denied due to user key not recognized by server</li>
+<li>No supported authentication method available</li>
+<li>Server refused the key AWS Video Training</li>
+<!-- Answer ::: END -->
+</div>
+</div>
+
+<!--/.Work Here :: END -->
+</div>
+</div>
+</div>
+<!--/.container-fluid -->
+
+<link rel="stylesheet" href="vendor/highlight/css/androidstudio.css">
+<script src="vendor/highlight/js/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</body>
+
+</html>

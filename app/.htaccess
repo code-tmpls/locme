@@ -1,0 +1,21 @@
+RewriteEngine On
+
+DirectoryIndex default.php
+
+RewriteRule styles/([^/]+)$ styles/$1 [NC,L]
+RewriteRule styles/([^/]+)/([^/]+)$ styles/$1/$2 [NC,L]
+
+RewriteRule fonts/([^/]+)$ fonts/$1 [NC,L]
+
+RewriteRule js/([^/]+)$ js/$1 [NC,L]
+RewriteRule js/([^/]+)/([^/]+)$ js/$1/$2 [NC,L]
+
+RewriteRule user/account lobby_list.php [NC,L] 
+RewriteRule lobby/view/([^/]+)$ lobby_view.php?lobbyId=$1 [NC,L] 
+RewriteRule admin/dashboard admin_dashboard_platform.php [NC,L]
+RewriteRule admin/qa/add admin_dashboard_qa_add.php [NC,L]
+RewriteRule admin/qa/view/([^/]+)$ admin_dashboard_qa_view.php?platformName=$1 [QSA]
+
+
+RewriteRule user/login user_auth.php [NC,L]
+RewriteRule user/pricing pricing.php [NC,L]

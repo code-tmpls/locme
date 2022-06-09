@@ -1,0 +1,39 @@
+<script type="text/javascript">
+/*
+let target = { firstName:'Hello', lastName:'World' };
+
+document.write(JSON.stringify(target));
+
+let handler1 = {};
+
+let proxy1 = new Proxy(target, handler1);
+
+document.write(JSON.stringify(proxy1));
+
+let handler2 = {
+ get: function(target, prop, receiver){
+  console.log(target);
+  console.log(prop);
+  if(prop==='firstName'){
+    return 'Anup';
+  } else if(prop==='lastName'){
+    return 'Chakrvarthi';
+  }
+ }
+};
+
+let proxy2 = new Proxy(target, handler2);
+document.write(JSON.stringify(proxy2));
+*/
+
+let target = "Hello";
+let handler = {
+ getPrototypeOf(target){
+   return "Hi";
+ }
+};
+
+let proxy = new Proxy(target, handler);
+document.write(proxy);
+
+</script>

@@ -1,0 +1,44 @@
+===============================
+API
+-------------------------------
+Add New Technologies
+-------------------------------
+Method: GET
+URL: http://localhost/np/locumme_java/src/main/resources/backend/tech/add/new
+Parameters: ?techName=hello&techDesc=Hello%20Test
+-------------------------------
+-------------------------------
+Update Existing Technologies
+-------------------------------
+Method: GET
+URL: http://localhost/np/locumme_java/src/main/resources/backend/tech/update/new
+Parameters: ?techName=hello&techDesc=Hello%20Test
+-------------------------------
+-------------------------------
+Add New Subject
+-------------------------------
+Method: GET
+URL: http://localhost/np/locumme_java/src/main/resources/backend/subject/add/new
+Parameters: ?subject=testSubject&techName=hello&subjectDesc=Test&subjectFolder=test
+-------------------------------
+-------------------------------
+Update Existing Subject
+-------------------------------
+Method: GET
+URL: http://localhost/np/locumme_java/src/main/resources/backend/subject/update/new
+Parameters: ?subject=testSubject&techName=hello&subjectDesc=updateTest&subjectFolder=updatetest
+-------------------------------
+-------------------------------
+Add New Syllabus
+-------------------------------
+Method: GET
+URL: http://localhost/np/locumme_java/src/main/resources/backend/syllabus/add/new
+Parameters: ?syllabus=TestSyllabus&subject=testSubject&syllabusDesc=testSyllabusDesc&syllabusFolder=testSyllabusFolder
+-------------------------------
+-------------------------------
+Update Existing Syllabus
+-------------------------------
+Method: GET
+URL: http://localhost/np/locumme_java/src/main/resources/backend/syllabus/update/new
+Parameters: ?syllabus=TestSyllabus&subject=updateTestSubject&syllabusDesc=updateTestSyllabusDesc&syllabusFolder=updateTestSyllabusFolder
+-------------------------------

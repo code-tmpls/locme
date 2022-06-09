@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "9e3b55d7-7476-4891-9de6-882a78e83b5d",
+		"name": "locumme",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Technology",
+			"item": [
+				{
+					"name": "Add New Technology",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/np/locumme_java/src/main/resources/backend/tech/add/new?techName=Test Tech Name&techDesc=Test Tech Description",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"np",
+								"locumme_java",
+								"src",
+								"main",
+								"resources",
+								"backend",
+								"tech",
+								"add",
+								"new"
+							],
+							"query": [
+								{
+									"key": "techName",
+									"value": "Test Tech Name"
+								},
+								{
+									"key": "techDesc",
+									"value": "Test Tech Description"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Existing Technology",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/np/locumme_java/src/main/resources/backend/tech/update/new?techName=Test Tech Name&techDesc=Test Update Tech Description",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"np",
+								"locumme_java",
+								"src",
+								"main",
+								"resources",
+								"backend",
+								"tech",
+								"update",
+								"new"
+							],
+							"query": [
+								{
+									"key": "techName",
+									"value": "Test Tech Name"
+								},
+								{
+									"key": "techDesc",
+									"value": "Test Update Tech Description"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subject",
+			"item": []
+		},
+		{
+			"name": "Syllabus",
+			"item": []
+		},
+		{
+			"name": "Questions and Answers",
+			"item": []
+		},
+		{
+			"name": "Platform",
+			"item": [
+				{
+					"name": "GeneratePlatformInfo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

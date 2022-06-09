@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Locum Me</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<style>
+.mtop15p { margin-top:15px; }
+</style>
+<script>
+var chatDisplay=[];
+var jsonData = { "java,8,features,enhancements":{ title:"What are the features of Java 8?", answer: "The following are the Java 8 Features: Lambda expressions, Functional interfaces, Method references, Default methods, Stream API, Static methods, Optional, Collectors, ForEach() method, Parallel Array Sorting" },
+			     "java,concurrency":{ title:"What is Java Concurrency?", answer: "Running in Parallel" },
+				 "functional,Interface,Interfaces":{ title:"What is Functional Interface?", answer: "An Interface that contains only one abstract method is known as functional interface. It can have any number of default and static methods."},
+				 "forEach,java,8,enhancements":{ title:"What are the Enhancements done with Foreach in Java 8?", answer:"Java provides a new method forEach() to iterate the elements. It is defined in Iterable and Stream interfaces.It is a default method defined in the Iterable interface. Collection classes which extends Iterable interface can use forEach() method to iterate elements."}
+			   };
+
+function keywrdRecognizer(variable, keywords){
+ var keys = variable.split(" ");
+ var print_keywrds = [];
+ for(var index=0;index<keys.length;index++){
+  if(keywords.map(data => data.toLowerCase().trim()).includes(keys[index].toLowerCase().trim())){ print_keywrds.push(keys[index].toLowerCase().trim()); }
+ }
+ return print_keywrds;
+}
+function keywrdsDisplay(print_keywrds){
+  return print_keywrds.map(data=>' <span class="label label-primary">'+data+'</span> ').toString().replaceAll(',','');
+}
+GLOBAL_CHAT_VALUE='';
+function answerDisplay(value){
+  GLOBAL_CHAT_VALUE = value;
+  return '<div class="list-group"><div class="list-group-item">'+
+		  '<div align="center"><h4><b>'+value.title+'</b></h4></div>'+
+		  '<div>'+value.answer+'</div>'+
+		  '<div id="proxy_sendBtn" align="right">'+sendBtnDisplay()+'</div>'+
+		  '</div></div>';
+}
+function sendBtnDisplay(){
+  return '<button class="btn btn-default" onclick="javascript:proxySendInfo();"><b>Send</b> <i class="fa fa-send"></i></button>';
+}
+function sentIconDisplay(){
+  return '<i class="fa fa-2x fa-check-circle"></i>';
+}
+function proxySendInfo(){
+ // Chat Sharing code display
+ chatDisplay.push('<div class="list-group"><div class="list-group-item">'+
+		  '<div align="center"><h4><b>'+GLOBAL_CHAT_VALUE.title+'</b></h4></div>'+
+		  '<div>'+GLOBAL_CHAT_VALUE.answer+'</div>'+
+		  '</div></div>');
+
+ document.getElementById("proxy_sendBtn").innerHTML = sentIconDisplay();
+}
+
+setInterval(function(){
+ var content = '';
+ for(var index=0;index<chatDisplay.length;index++){
+   content+=chatDisplay[index];
+ }
+ document.getElementById("chatDisplayInfo").innerHTML=content;
+},500);
+
+if (annyang) {
+  // Let's define our first command. First the text we expect, and then the function it should call
+  var commands = {
+	'*variable': function(variable) {
+	  var matchConfidenceArray = [];
+	  var matchConfidence = {count:0,value:"", keywords:""};
+	  for(var key in jsonData){
+		var keywords = key.split(",");
+		var print_keywrds = keywrdRecognizer(variable, keywords);
+	    console.log(key+" "+jsonData[key]);
+		console.log(print_keywrds+" "+print_keywrds.length);
+		console.log(print_keywrds.length+" "+matchConfidence.count);
+		if(print_keywrds.length>matchConfidence.count){ 
+		    matchConfidenceArray.push(matchConfidence);
+			matchConfidence.count = print_keywrds.length;
+		    matchConfidence.value = jsonData[key]; 
+			matchConfidence.keywords = keywrdsDisplay(print_keywrds);
+		}
+	  }
+	  
+      document.getElementById("print").innerHTML = variable;
+	  document.getElementById("keywords").innerHTML = matchConfidence.keywords;
+	  if(matchConfidence.value.title!==undefined && matchConfidence.value.answer!==undefined){
+		document.getElementById("displayAnswer").innerHTML = answerDisplay(matchConfidence.value);
+	  }
+    }
+  };
+
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+  annyang.setLanguage('en-US');
+  // Start listening. You can call this here, or attach this call to an event, button, etc.
+  annyang.start({ autoRestart: true, continuous: true });
+}
+</script>
+</head>
+<body>
+
+<div class="jumbotron text-center" style="margin-bottom:0px;">
+  <h4 id="print">Say Something...</h4>
+  <div align="center">
+	<button class="btn btn-default" onclick="javascript:proxySendInfo();"><b>Send</b> <i class="fa fa-send"></i></button>
+  </div>
+</div>
+<div class="container-fluid">
+ <div class="row">
+	<div id="keywords" align="right" class="col-md-12"></div><!--/.col-md-12 -->
+ </div><!--/.row -->
+ <div class="row mtop15p">
+	<div class="col-md-6">
+		<h4><b>Your Chat Title</b></h4><hr/>
+		<div class="list-group">
+		  <div id="chatDisplayInfo" class="list-group-item" style="min-height:400px;overflow-y:scroll;">
+		
+		  </div>
+		</div>
+	</div><!--/.col-md-6 -->
+	<div class="col-md-6">
+		<h4><b>Suggestions</b></h4><hr/>
+		<div id="displayAnswer"></div>
+	</div><!--/.col-md-6 -->
+ </div><!--/.row -->
+</div><!--/.container-fluid -->
+
+ 
+</body>
+</html>
