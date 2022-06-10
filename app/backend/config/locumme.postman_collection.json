@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Add/Update AppStaticData",
+			"name": "AppStaticData - Add/Update",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -26,13 +26,14 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost/locumme/backend/app/data/add",
+					"raw": "http://localhost/locme/app/backend/app/data/add",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"path": [
-						"locumme",
+						"locme",
+						"app",
 						"backend",
 						"app",
 						"data",
@@ -42,7 +43,118 @@
 			},
 			"response": [
 				{
-					"name": "http://localhost/locumme/backend/app/data/add",
+					"name": "POST API REQUEST",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "configKey",
+									"value": "Test",
+									"type": "default"
+								},
+								{
+									"key": "configValue",
+									"value": "123",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost/locumme/backend/app/data/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"locumme",
+								"backend",
+								"app",
+								"data",
+								"add"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 09 Jun 2022 22:22:12 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.2.22 (Win64) PHP/5.4.3"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.4.3"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 19 Nov 1981 08:52:00 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Data Added/Updated Successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "AppStaticData - View",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"keys\":[\"authDomain\",\"apiKey\",\"projectId\",\"storageBucket\",\"messagingSenderId\",\"appId\",\"measurementId\"],\r\n\"values\":[\"FB_AUTHDOMAIN\",\"FB_APIKEY\",\"FB_PROJECT_ID\",\"FB_STORAGE_BUCKET\",\"FB_MSG_SENDERID\",\"FB_APP_ID\",\"FB_MEASURE_ID\"]\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost/locme/app/backend/app/data/view",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"locme",
+						"app",
+						"backend",
+						"app",
+						"data",
+						"view"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST API REQUEST",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
