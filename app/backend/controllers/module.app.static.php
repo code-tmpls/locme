@@ -31,26 +31,40 @@ if(isset($_GET["action"])){
 	
  } 
  else if($_GET["action"]=='APP_ADDUPDATE_STATDATA'){
-	if(isset($_POST["configKey"]) && isset($_POST["configValue"])) {
-	 $configKey = $_POST["configKey"];
-	 $configValue = $_POST["configValue"];
+	$data = json_decode(file_get_contents('php://input'), true);
+	$configKey = $data["configKey"];
+	$configValue = $data["configValue"];
+	if(strlen($configKey)>0 && strlen($configValue)>0) {
 	 $query = $appStaticModule->query_addUpdate_appStaticData($configKey, $configValue);
 	 $content["status"] =  $database->addupdateData($query);
 	 $content["message"] = "Data Added/Updated Successfully";
 	 echo json_encode($content);
 	} else {
 	   $message='Missing';
-	   if(!isset($_POST["configKey"])){ $message.=' configKey,'; }
-	   if(!isset($_POST["configValue"])){ $message.=' configValue,'; }
+	   if(strlen($configKey)<=0){ $message.=' configKey,'; }
+	   if(strlen($configValue<=0)){ $message.=' configValue,'; }
 	   $message=chop($message,',');
 	   $content = array();
 	   $content["status"] =  "Failed";
 	   $content["message"] = $message;
 	   echo json_encode($content);
 	}
- } else if($_POST["action"]=='APP_DELETE_STATDATA'){
-	$appStaticModule->query_delete_appStaticData($configKey);	
- } 
+ }
+ else if($_GET["action"]=='APP_DELETE_STATDATA'){
+	$data = json_decode(file_get_contents('php://input'), true);
+	$configKey = $data["configKey"];
+	if(strlen($configKey)>0) {
+	 $query = $appStaticModule->query_delete_appStaticData($configKey);	
+	 $content["status"] =  $database->addupdateData($query);
+	 $content["message"] = "Data deleted Successfully";
+	 echo json_encode($content);
+	} else {
+	   $content = array();
+	   $content["status"] =  "Failed";
+	   $content["message"] = "Missing configKey";
+	   echo json_encode($content);
+	}
+ }
 }
 else { 
  $content = array();
